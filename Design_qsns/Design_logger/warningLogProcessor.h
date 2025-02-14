@@ -11,7 +11,7 @@ class WarningLogProcessor : public LogProcessor{
 public:
 void log(string message , long timestamp , int level , LoggingStrategy* logStrategy) {
     if(level == LogProcessor::warningLevel) {
-       string logMessage = "[" +  to_string(timestamp) + " [WARNING] " + message;
+       string logMessage = "[" +  to_string(timestamp) + "] [WARNING] " + message;
        logStrategy->write(logMessage);
     }
     else if(nextLogProcessor != nullptr) {

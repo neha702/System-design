@@ -35,9 +35,11 @@ int getLogLevel() {
 }
 
 void log(string message , long timestamp , int level) {
+    mtx.lock();
     if(logProcessorObj != nullptr && level >= logLevel)
         logProcessorObj->log(message , timestamp , level , logStrategy);
     else cout << "Logging at this level is not allowed" << endl;
+    mtx.unlock();
 }
 
 void setLogTarget(string target) {
