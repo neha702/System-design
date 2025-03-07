@@ -29,7 +29,7 @@ void calculateReputation(User* u) {
     int repo = 0;
     vector<pair<Post*, bool> >votedPosts = u->getVotedPosts();
     for(auto it : votedPosts) {
-        if(it.second == 1) {
+        if(it.second == 0) {
             repo += -5;
         }
     }
