@@ -1,0 +1,8 @@
+#ifndef TRANSACTIONTYPE_H
+#define TRANSACTIONTYPE_H
+
+enum TransactionType {
+CASH_WITHDRAWAL , BALANCE_ENQUIRY
+};
+
+#endif // TRANSACTIONTYPE_H
