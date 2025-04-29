@@ -13,8 +13,8 @@ int main() {
     Product* p2 = productFactory->createProduct("Veggy1" , 2 , 2.0 , 2 , GROCERY);
     Product* p3 = productFactory->createProduct("Pant1" , 3 , 15.0 , 3 , CLOTHING);
 
-    shoppingCart->addToCart(p1 , 10);
-    shoppingCart->addToCart(p3 , 5);
+    shoppingCart->addToCart(p1 , 10, 2);
+    shoppingCart->addToCart(p3 , 5 , 1);
     double value = shoppingCart->getTotalPrice();
     cout << "Shopping cart has cumulative value of " << value << endl;
 }

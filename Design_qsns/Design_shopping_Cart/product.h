@@ -21,6 +21,10 @@ public:
     }
    
     virtual double getPrice() = 0;
+
+    void removeStock(int quantity) {
+        this->quantity = this->quantity - quantity;
+    }
     
     int getId() {
         return id;
