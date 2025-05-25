@@ -8,7 +8,14 @@ class Calendar {
 public:
     bool isAvailable(long startTime , long endTime) {
         //check if user is available between start and end time => meeting doesnt exist in both on start or end time
-        return (meetingMap.find(startTime) == meetingMap.end() && meetingMap.find(endTime) == meetingMap.end());
+        bool ifAvailable = true;
+        for(int i = startTime; i <= endTime; i++) {
+            if(meetingMap.find(i) != meetingMap.end()) { // meeting exist in range
+                ifAvailable = false;
+                break;
+            }
+        }
+        return ifAvailable;
     }
 
     vector<Meeting*> getMeetingsInTimeRange(long startTime , long endTime) {

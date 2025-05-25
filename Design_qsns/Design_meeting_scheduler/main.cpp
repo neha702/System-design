@@ -32,7 +32,7 @@ int main() {
     vector<User*>attendees2;
     attendees2.push_back(u2);
     attendees2.push_back(u3);
-    int meetingId2 = meetingServiceInstance->createMeeting(u2 , 12 , 14 , "Intro to music" , attendees2 , MeetingType::GROUP);
+    int meetingId2 = meetingServiceInstance->createMeeting(u2 , 13 , 16 , "Intro to music" , attendees2 , MeetingType::GROUP);
     
     //should be created
     vector<User*>attendees3;
