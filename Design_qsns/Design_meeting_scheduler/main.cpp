@@ -23,7 +23,7 @@ int main() {
     attendees1.push_back(u2);
 
     //meeting with u1 and u2 should be created
-    int meetingId1 = meetingServiceInstance->createMeeting(u1 , 12 , 14 , "Intro to dance" , attendees1 , MeetingType::ONETOONE);
+    int meetingId1 = meetingServiceInstance->createMeeting(u1 , 13 , 16 , "Intro to dance" , attendees1 , MeetingType::ONETOONE);
     
     //view meetings for u2
     meetingServiceInstance->viewMeetings(u2);
@@ -32,19 +32,19 @@ int main() {
     vector<User*>attendees2;
     attendees2.push_back(u2);
     attendees2.push_back(u3);
-    int meetingId2 = meetingServiceInstance->createMeeting(u2 , 13 , 16 , "Intro to music" , attendees2 , MeetingType::GROUP);
+    int meetingId2 = meetingServiceInstance->createMeeting(u2 , 14 , 15 , "Intro to music" , attendees2 , MeetingType::GROUP);
     
     //should be created
     vector<User*>attendees3;
     attendees3.push_back(u4);
     attendees3.push_back(u5);
-    int meetingId3 = meetingServiceInstance->createMeeting(u5 , 12 , 14 , "Intro to art" , attendees3 , MeetingType::ONETOONE);
+    int meetingId3 = meetingServiceInstance->createMeeting(u5 , 13 , 16 , "Intro to art" , attendees3 , MeetingType::ONETOONE);
 
     //u1 and u2 got unblocked
     meetingServiceInstance->removeMeeting(meetingId1);
     
     //meeting with u2 and u3 should be created now
-    int meetingId4 = meetingServiceInstance->createMeeting(u2 , 12 , 14 , "Intro to music" , attendees2 , MeetingType::GROUP);
+    int meetingId4 = meetingServiceInstance->createMeeting(u2 , 13 , 16 , "Intro to music" , attendees2 , MeetingType::GROUP);
 
     meetingServiceInstance->viewMeetings(u2);
 }

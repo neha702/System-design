@@ -2,6 +2,7 @@
 #define MEETINGSERVICE_H
 #include "user.h"
 #include "userManager.h"
+#include "meetingObserver.h"
 
 class MeetingService {
     static MeetingService* meetingSvcInstance;
@@ -9,6 +10,7 @@ class MeetingService {
     static mutex mtx;
     static int meetingId;
     unordered_map<int , Meeting*> meetingMap; //meetingId to meeting map
+    MeetingObserver meetingObserver; //observer to notify about meeting changes
     vector<User*>users;
 public:
     static MeetingService* getMeetingServiceInstance() {
@@ -36,6 +38,7 @@ public:
         //meeting to be added for all attendees in calendar
         for(auto attendee : attendees) {
          attendee->addMeeting(startTime , endTime , newMeeting);
+         meetingObserver.notifyAddition(attendee , newMeeting->getTitle()); //notify each attendee about the meeting
         }
     
         meetingMap[meetingId] = newMeeting;
@@ -55,6 +58,7 @@ public:
         //remove meeting for all attendees
         for(auto attendee : attendees) {
             attendee->removeMeeting(meeting);
+            meetingObserver.notifyRemoval(attendee ,  meeting->getTitle()); //notify each attendee about the meeting
         }
 
         meetingMap.erase(meeting_id);
