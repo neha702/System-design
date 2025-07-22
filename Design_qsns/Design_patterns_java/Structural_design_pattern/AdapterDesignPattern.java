@@ -42,7 +42,7 @@ class AdapterTool extends Tool {
 }
 
 
-public class adapter_design_pattern {
+public class AdapterDesignPattern {
     public static void main(String[] args) {
         Client client = new Client(); //Client is created
         XMLData xmlData = new XMLData("Sky is beautiful"); // XML data is created

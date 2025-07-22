@@ -60,7 +60,7 @@ class TataBike implements IBike {
     }
 }
 
-public class abstract_factory_design_pattern {
+public class AbstractFactoryDesignPattern {
     private static IFactory createFactory(String factoryType) {
         switch(factoryType) {
             case "Hyundai":

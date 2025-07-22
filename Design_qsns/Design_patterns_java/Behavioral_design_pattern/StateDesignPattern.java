@@ -51,7 +51,7 @@ class FanService {
     }
 }
 
-public class state_design_pattern {
+public class StateDesignPattern {
     public static void main(String []args) {
         FanService fan = new FanService();
         fan.pressButton(); //Transition to low state

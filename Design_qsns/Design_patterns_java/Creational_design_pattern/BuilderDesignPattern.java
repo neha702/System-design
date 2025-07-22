@@ -55,7 +55,7 @@ class Director {
     }
 }
 
-public class builder_design_pattern {
+public class BuilderDesignPattern {
     public static void main(String[] args) {
         House house1 = new House();
         Builder houseBuilder = new HouseBuilder(house1);

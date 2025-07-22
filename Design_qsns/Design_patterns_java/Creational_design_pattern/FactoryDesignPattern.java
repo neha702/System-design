@@ -2,6 +2,18 @@
 //and can call the factory to create object instead
 package Design_qsns.Design_patterns_java.Creational_design_pattern;
 
+class Circle implements Shape {
+    public void draw() {
+        System.out.println("Drawing a Circle");
+    }
+}
+
+class Square implements Shape {
+    public void draw() {
+        System.out.println("Drawing a Square");
+    }
+}
+
 class ShapeFactory {
     public Shape createShape(String shapeType) {
         switch(shapeType) {
@@ -20,19 +32,7 @@ interface Shape {
     void draw();
 }
 
-class Circle implements Shape {
-    public void draw() {
-        System.out.println("Drawing circle");
-    }
-}
-
-class Square implements Shape {
-    public void draw() {
-        System.out.println("Drawing square");
-    }
-}
-
-public class factory_design_pattern {
+public class FactoryDesignPattern {
     public static void main(String[] args){
         ShapeFactory shapeFactory = new ShapeFactory();
         Shape shape = shapeFactory.createShape("SQUARE");

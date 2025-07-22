@@ -72,7 +72,7 @@ class Remote { // invoker
     }
 }
 
-public class command_design_pattern {
+public class CommandDesignPattern {
     public static void main(String[] args) {
        AirConditioner ac = new AirConditioner(); // receiver is created
        Remote remote = new Remote(); //remote that is invoker is created

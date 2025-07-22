@@ -23,7 +23,7 @@ class Logger {
     }
 }
 
-public class singleton_design_pattern {
+public class SingletonDesignPattern {
     public static void main(String []args) {
         Logger logger = Logger.getInstance(); // Static methods accessed as className.method
         logger.log("Logger is working fine!");

@@ -49,7 +49,7 @@ class CreamDecorator extends IDecorator {
 
 
 
-public class decorator_design_pattern {
+public class DecoratorDesignPattern {
     public static void main(String[] args) {
         Coffee pcoffee = new PlainCoffee();
         System.out.println("Cost of plain coffee: " + pcoffee.getCost());

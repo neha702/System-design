@@ -32,7 +32,7 @@ class PaymentService {
     }
 }
 
-public class strategy_design_pattern {
+public class StrategyDesignPattern {
     public static void main(String []args)  {
         PaymentStrategy paymentStrategy1 = new PaymentByCash();
         PaymentService paymentService = new PaymentService(paymentStrategy1);

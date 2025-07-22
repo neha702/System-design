@@ -33,7 +33,7 @@ class Group { // subject
     }
 }
 
-public class observer_design_pattern {
+public class ObserverDesignPattern {
     public static void main(String[] args) {
         Group group = new Group();
         User user1 = new User();

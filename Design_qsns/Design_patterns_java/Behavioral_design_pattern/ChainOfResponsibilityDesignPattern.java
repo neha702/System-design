@@ -1,3 +1,4 @@
+
 //This design pattern is used to pass a requst to chain of handler, each handler can either process a request or pass to next one in chain
 package Design_qsns.Design_patterns_java.Behavioral_design_pattern;
 
@@ -67,8 +68,7 @@ class LevelHandlerThree implements ILevelHandler {
     }
 }
 
-
-public class chain_of_responsibility_design_pattern {
+public class ChainOfResponsibilityDesignPattern {
     private static ILevelHandler createChainOfHandler() {
         ILevelHandler levelOneHandler = new LevelHandlerOne();
         ILevelHandler levelTwoHandler = new LevelHandlerTwo();
