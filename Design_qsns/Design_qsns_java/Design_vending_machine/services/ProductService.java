@@ -3,11 +3,11 @@ package Design_qsns.Design_qsns_java.Design_vending_machine.services;
 import Design_qsns.Design_qsns_java.Design_vending_machine.models.Product;
 import java.util.*;
 
-public class VendingSvcManager {
+public class ProductService {
     ArrayList<Product> productsList;
     Map<String , Product> productsMap;
 
-    VendingSvcManager() {
+    ProductService() {
         productsList = new ArrayList<>();
         productsMap = new HashMap<>();
     }

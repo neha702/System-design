@@ -97,6 +97,10 @@ public class BookManager {
     }
 
     public void viewProfile(User u) {
+        if(!userMap.containsKey(u.getId())) {
+            System.out.println("User doesn't exist!");
+            return;
+        }
         System.out.println("User name: " + u.getName() + " , User id: " + u.getId() + " , User email " + u.getEmail() );
         System.out.println("Issued books are: ");
         ArrayList<IssueRecord> records = u.getIssueRecords();

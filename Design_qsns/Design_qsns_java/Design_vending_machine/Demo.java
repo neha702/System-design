@@ -16,15 +16,18 @@ import Design_qsns.Design_qsns_java.Design_vending_machine.services.*;
 public class Demo {
     public static void main(String []args) {
         VendingMachineSvc svcInstance = VendingMachineSvc.getInstance();
-        VendingSvcManager managerInstance = svcInstance.getManagerInstance();
+        ProductService productSvcInstance = svcInstance.getProductServiceInstance();
+
+        if(productSvcInstance == null){
+            System.out.println("Product Service instance is null, cannot proceed.");
+            return;
+        }
 
         Product product1 = new Product("P001" , 10 , "Pepsi" , 2);
         Product product2 = new Product("P002" , 20 , "Lays" , 2);
 
-        if(managerInstance != null) {
-            managerInstance.addProduct(product1);
-            managerInstance.addProduct(product2);
-        }
+        productSvcInstance.addProduct(product1);
+        productSvcInstance.addProduct(product2);
 
 
         //Transaction1

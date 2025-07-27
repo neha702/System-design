@@ -1,34 +1,35 @@
 package Design_qsns.Design_qsns_java.Design_vending_machine.states;
 
 import Design_qsns.Design_qsns_java.Design_vending_machine.models.*;
-import Design_qsns.Design_qsns_java.Design_vending_machine.services.VendingMachineSvc;
-import Design_qsns.Design_qsns_java.Design_vending_machine.services.VendingSvcManager;
+import Design_qsns.Design_qsns_java.Design_vending_machine.services.BalanceService;
+import Design_qsns.Design_qsns_java.Design_vending_machine.services.ProductService;
+import Design_qsns.Design_qsns_java.Design_vending_machine.services.StateService;
 
 public class IdleState implements State{
-    public boolean insertValue (IDenomination denomination , User u ,VendingMachineSvc instance) {
-        instance.setBalance(denomination.getAmount());
+    public boolean insertValue(IDenomination denomination , User u , BalanceService balanceSvc , StateService stateSvc) {
+        balanceSvc.setBalance(denomination.getAmount());
         u.setBalance(-denomination.getAmount());
         System.out.println("Denomination is inserted: " + denomination.getAmount());
-        instance.setState(new HasAmountState()); 
+        stateSvc.setState(new HasAmountState()); 
         return true;
     }
 
-    public boolean cancelTransaction(User u , VendingMachineSvc instance) {
+    public boolean cancelTransaction(User u , BalanceService balanceSvc, StateService stateSvc) {
         System.out.println("Transaction can't be cancelled in idle state");
         return false;
     }
 
-    public Product selectProduct(String productId ,VendingMachineSvc instance , VendingSvcManager managerInstance) {
+    public Product selectProduct(String productId , ProductService productSvc , StateService stateSvc , BalanceService balanceSvc) {
         System.out.println("Can't select product in idle state");
         return null;
     }
 
-    public boolean dispenseProduct(Product product ,VendingMachineSvc instance , VendingSvcManager managerInstance) {
+    public boolean dispenseProduct(Product product , BalanceService balanceSvc , StateService stateSvc ,ProductService productSvc) {
        System.out.println("Can't dispense product in idle state");
        return false;
     }
 
-    public int returnChange(Product product , User u , VendingMachineSvc instance) {
+    public int returnChange(Product product , User u , BalanceService balanceSvc , StateService stateSvc) {
         System.out.println("Can't return change in idle state");
         return -1;
     }
